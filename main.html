@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -25,16 +25,22 @@
 
         <!-- 퀘스트 진행률 -->
         <div class="quest">
-            <div class='quest_text'>
-                <p>오늘의 퀘스트 진행률</p>
-            </div>
-            <div class='quest_btn'>
-                <button id='questbtn'>
-                    <span>자세히 보기</span>
-                </button>
+            <div class='quest_left'>
+                <div class='quest_text'>
+                    <p>오늘의 퀘스트 진행률</p>
+                </div>
+                <div class='quest_btn'>
+                    <button id='questbtn'>
+                        <span>자세히 보기</span>
+                    </button>
+                </div>
             </div>
             <div class='progress_circle'>
-                <span>85%</span>
+                <svg width="105" height="105">
+                    <circle class="bg" cx="52.5" cy="52.5" r="42.5"></circle>
+                    <circle class="progress" cx="52.5" cy="52.5" r="42.5"></circle>
+                </svg>
+                <span id="progressText">85%</span>
             </div>
         </div>
 
@@ -44,26 +50,50 @@
                 <h2>모니터링 알림</h2>
                 <span class='badge'>6</span>
             </div>
-                <div class='monitor_list'>
-                    <div class='monitor_card'>
-                        <p>마지막 활동</p>
-                        <h3>거실 모션 감지</h3>
-                    </div>
-                    <div class='monitor_card'>
-                        <p>낙상 감지</p>
-                        <h3>0회</h3>
-                    </div>
+            <div class='monitor_list'>
+                <div class='monitor_card'>
+                    <p>마지막 활동</p>
+                    <h3>거실 모션 감지</h3>
                 </div>
+                <div class='monitor_card'>
+                    <p>낙상 감지</p>
+                    <h3>0회</h3>
+                </div>
+            </div>
         </div>
+        
         <!-- 주간 인지 능력 추이-->
         <div class='weekly'>
-            <div class ='weekly_text'>
+            <div class='weekly_text'>
                 <h2>주간 인지 능력 추이</h2>
             </div>
             <div class='weekly_chart'>
                 <canvas id="weeklyChart"></canvas>
             </div>
         </div>
+        
+        <!--아래바-->
+        <div class='bar'>
+            <div class='home'>
+                <button id='home'>
+                    <img src="images/home.png" class="home" alt="home">
+                </button>
+            </div>
+            <div class='alert'>
+                <button id='alert'>
+                    <img src="images/alert.png" class="alert" alt="alert">
+                </button>
+            </div>
+            <div class='setting'>
+                <button id='setting'>
+                    <img src="images/setting.png" class="setting" alt="setting">
+                </button>
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
 </body>
+
 </html>

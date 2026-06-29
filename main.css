@@ -4,20 +4,245 @@ body {
     font-family: Lexend Deca;
 }
 
+/* 컨테이너 */
 .container {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 }
 
-/* 상단 바 */
 .header {
     width: 100%;
-    height: 60px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_text p {
+    margin-left: 30px;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.header_text h1 {
+    margin-left: 30px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    font-size: 20px;
+}
+
+.alarm img {
+    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+}
+
+.quest {
+    width: 350px;
+    margin: 0 auto;
+    height: 150px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
+    background-color: #5f32e1;
+    border-radius: 20px;
     justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box; 
+}
+
+.quest_left {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+/* 오늘의 퀘스트 진행률 */
+.quest_text {
+    margin-top: 4px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.quest_btn {
+    margin-bottom: 26px;
+}
+
+#questbtn {
+    width: 130px;
+    height: 40px;
+    border-radius: 14px;
+    background: #EEE9FF;
+    border: none;
+    color: #5f32e1;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.progress_circle {
+    position: relative;
+    margin-right: 30px;
+    width: 105px;
+    height: 105px;
+}
+
+.progress_circle svg {
+    width: 105px;
+    height: 105px;
+    transform: rotate(-90deg);
+}
+
+.progress_circle circle {
+    fill: none;
+    stroke-width: 8;
+}
+
+.progress_circle .bg {
+    stroke: rgba(255,255,255,0.25);
+}
+
+.progress_circle .progress {
+    stroke: white;
+    stroke-linecap: round;
+
+    /* 반지름 42.5 기준 둘레 */
+    stroke-dasharray: 267;
+
+    /* 85% 진행 */
+    stroke-dashoffset: 40;
+}
+
+.progress_circle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+/* 모니터링 */
+.monitoring {
+    width: 350px;
+    margin: 30px auto 0;
+}
+
+.monitoring_text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.monitoring_text h2 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.badge {
+    width: 18px;
+    height: 18px;
+    background: #EEE9FF;
+    color: #5F32E1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.monitor_list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+.monitor_list::-webkit-scrollbar {
+    display: none;
+}
+
+.monitor_card {
+    flex: 0 0 210px;
+    height: 100px;
+    padding: 18px;
+    border-radius: 22px;
+    box-sizing: border-box;
+}
+
+.monitor_card p {
+    margin-top: 0px;
+    margin-left: 4px;
+    font-size: 11px;
+    color: #666;
+}
+
+.monitor_card h3 {
+    margin-top: 10px;
+    margin-left: 4px;
+    font-size: 18px;
+}
+
+/* 색상 조정  */
+.monitor_card:nth-child(1) {
+    background: #EAF3FF;
+}
+
+.monitor_card:nth-child(2) {
+    background: #FFEFE8;
+}
+
+.weekly {
+    width: 350px;
+    margin: 35px auto 0;
+}
+
+.weekly_chart {
+    width: 100%;
+    height: 240px;
+    background: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.weekly_chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* 아래 바 */
+.bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: #F5F5F5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 버튼 */
+.bar button {
+    width: 96px;
+    height: 55px;
+    border: none;
+    background: transparent;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+/* 아이콘 */
+.bar img {
+    width: 30px;
+    height: 30px;
+}
+
+#home {
+    background: #5F32E1;
 }
