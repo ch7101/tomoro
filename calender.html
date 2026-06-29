@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="calender.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- 상단 -->
+        <div class="header">
+
+            <button class="backbtn">
+                <img src="images/back.png">
+            </button>
+
+            <h2>날짜 선택</h2>
+
+            <button class="alarmbtn">
+                <img src="images/alarm.png">
+            </button>
+
+        </div>
+
+        <!-- 월 선택 -->
+        <div class="month_bar">
+
+            <button class="month_btn" id="prevBtn">
+                <img src="images/left.png">
+            </button>
+
+            <h3>4월 2026</h3>
+
+            <button class="month_btn" id="nextBtn">
+                <img src="images/right.png">
+            </button>
+
+        </div>
+
+        <hr>
+
+        <!-- 요일 -->
+        <div class="week">
+
+            <span>일</span>
+            <span>월</span>
+            <span>화</span>
+            <span>수</span>
+            <span>목</span>
+            <span>금</span>
+            <span>토</span>
+
+        </div>
+
+        <!-- 달력 -->
+        <div class="calendar">
+
+            <!-- 첫째 줄 -->
+            <button class="day disable">
+                <span class="date">29</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day disable">
+                <span class="date">30</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day disable">
+                <span class="date">31</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">1</span>
+                <span class="count">3</span>
+            </button>
+
+            <button class="day">
+                <span class="date">2</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day">
+                <span class="date">3</span>
+                <span class="count">5</span>
+            </button>
+
+            <button class="day">
+                <span class="date">4</span>
+                <span class="count">6</span>
+            </button>
+
+            <!-- 둘째 줄 -->
+            <button class="day">
+                <span class="date">5</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day">
+                <span class="date">6</span>
+                <span class="count">5</span>
+            </button>
+
+            <button class="day" autofocus>
+                <span class="date">7</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day">
+                <span class="date">8</span>
+                <span class="count">7</span>
+            </button>
+
+            <button class="day">
+                <span class="date">9</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">10</span>
+                <span class="count">4</span>
+            </button>
+
+            <button class="day">
+                <span class="date">11</span>
+                <span class="count">5</span>
+            </button>
+
+            <!-- 셋째 줄 -->
+            <button class="day">
+                <span class="date">12</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">13</span>
+                <span class="count">5</span>
+            </button>
+
+            <button class="day">
+                <span class="date">14</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day">
+                <span class="date">15</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">16</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day">
+                <span class="date">17</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">18</span>
+                <span class="count">6</span>
+            </button>
+
+            <!-- 넷째 줄 -->
+            <button class="day">
+                <span class="date">19</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">20</span>
+                <span class="count">3</span>
+            </button>
+
+            <button class="day">
+                <span class="date">21</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day">
+                <span class="date">22</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">23</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day">
+                <span class="date">24</span>
+                <span class="count">4</span>
+            </button>
+
+            <button class="day">
+                <span class="date">25</span>
+                <span class="count">6</span>
+            </button>
+
+            <!-- 다섯째 줄 -->
+            <button class="day">
+                <span class="date">26</span>
+                <span class="count">3</span>
+            </button>
+
+            <button class="day">
+                <span class="date">27</span>
+                <span class="count">4</span>
+            </button>
+
+            <button class="day">
+                <span class="date">28</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day">
+                <span class="date">29</span>
+                <span class="count">5</span>
+            </button>
+
+            <button class="day">
+                <span class="date">30</span>
+                <span class="count">6</span>
+            </button>
+
+            <button class="day disable">
+                <span class="date">1</span>
+                <span class="count"></span>
+            </button>
+
+            <button class="day disable">
+                <span class="date">2</span>
+                <span class="count"></span>
+            </button>
+
+        </div>
+
+        <!-- 아래바 -->
+        <div class="bar">
+
+            <div class="home">
+                <button id="homebtn">
+                    <img src="images/home.png" alt="home">
+                </button>
+            </div>
+
+            <div class="alarm">
+                <button id="alarmbtn">
+                    <img src="images/alert1.png" alt="alarm">
+                </button>
+            </div>
+
+            <div class="setting">
+                <button id="settingbtn">
+                    <img src="images/setting.png" alt="setting">
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
