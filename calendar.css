@@ -5,7 +5,7 @@
 /* 전체 */
 body{
     background:#fff;
-    font-family:Lexend Deca;
+    font-family:LexendDeca;
 }
 
 .container{
@@ -104,15 +104,17 @@ hr{
 /* 날짜 칸 */
 .day{
     width:42px;
+    height:100px;
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:6px;
-    padding:6px 0;
+    padding:8px 0;
     border:2px solid transparent;
     border-radius:16px;
     background:none;
     cursor:pointer;
+    justify-content: space-between
 }
 
 .date{

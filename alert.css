@@ -5,7 +5,22 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family:Lexend Deca;
+    font-family:LexendDeca;
+}
+
+/* 폼 요소도 같은 폰트 */
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+/* 컨테이너 */
+.container{
+    width:100%;
+    max-width:412px;
+    margin:0 auto;
 }
 
 /* 상단 */
