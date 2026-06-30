@@ -40,7 +40,7 @@ document.querySelectorAll(".calendar .day").forEach((dayBtn) => {
     dayBtn.addEventListener("click", () => {
         const date = dayBtn.querySelector(".date").textContent.trim();
 
-        // 선택한 날짜를 저장 (원래 페이지에서 읽어서 사용)
+        // 선택한 날짜를 저장
         sessionStorage.setItem("selectedDate", date);
 
         // 원래 페이지로 돌아가기
