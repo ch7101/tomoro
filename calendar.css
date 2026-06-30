@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 /* 전체 */
 body {
     background: #fff;
@@ -55,21 +51,21 @@ body {
 }
 
 .month_bar h3 {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .month_btn {
     width: 42px;
     height: 42px;
     border: none;
-    border-radius: 50%;
+    border-radius: 14px;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,.08);
     cursor: pointer;
 }
 
 .month_btn img {
-    width: 14px;
+    width: 9px;
 }
 
 /* 구분선 */
@@ -125,16 +121,16 @@ hr {
 
 /* 다른 달 날짜 */
 .disable .date {
-    color: #CFCFCF;
+    color: #B3B3B3;
 }
 
-/* 작은 표시 */
+/* 알림 */
 .count {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background: #EEE9FF;
-    color: #6236FF;
+    color: #5F33E1;
     font-size: 10px;
     font-weight: 700;
     display: flex;
@@ -150,8 +146,14 @@ hr {
 /* 선택 (클릭) */
 .day:focus,
 .selected {
-    border-color: #6236FF;
+    border-color: #5F33E1;
     outline: none;
+}
+
+/* 선택(클릭) 글자 보라색 */
+.day:focus .date,
+.selected .date {
+    color: #5F33E1;
 }
 
 /* 아래 바 */
