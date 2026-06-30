@@ -280,3 +280,14 @@ function renderToggle() {
 
 diffToggle.addEventListener("change", renderToggle);
 renderToggle();
+
+
+/* 버튼 회전 */
+document.querySelectorAll(".refreshbtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const icon = btn.querySelector("img");
+        if (!icon || icon.classList.contains("rotate")) return;
+        icon.classList.add("rotate");
+        setTimeout(() => icon.classList.remove("rotate"), 1500);
+    });
+});

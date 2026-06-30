@@ -11,6 +11,12 @@ document.getElementById("settingbtn").addEventListener("click", function () {
 });
 
 document.querySelector(".calendarbtn").addEventListener("click", () => {
+    // 현재 선택된 날짜를 캘린더에 기본 선택으로 넘긴다
+    const activeCard = document.querySelector(".date_card.active");
+    if (activeCard) {
+        const dateNum = activeCard.querySelector("h3").textContent.trim();
+        sessionStorage.setItem("alertSelectedDate", dateNum);
+    }
     window.location.href = "calendar.html";
 });
 
@@ -50,3 +56,25 @@ categoryBtns.forEach((btn) => {
         });
     });
 });
+
+
+//캘린더에서 선택한 날짜 받기
+function applySelectedDate() {
+    const selectedDate = sessionStorage.getItem("selectedDate");
+    if (!selectedDate) return;
+
+    console.log("선택한 날짜:", selectedDate);
+
+    // 받은 날짜와 같은 숫자를 가진 카드를 선택
+    dateCards.forEach((card) => {
+        const dateNum = card.querySelector("h3").textContent.trim();
+        if (dateNum === selectedDate.trim()) {
+            dateCards.forEach((c) => c.classList.remove("active"));
+            card.classList.add("active");
+        }
+    });
+
+    sessionStorage.removeItem("selectedDate");
+}
+
+window.addEventListener("pageshow", applySelectedDate);

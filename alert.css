@@ -19,7 +19,7 @@ textarea {
 /* 컨테이너 */
 .container {
     width: 100%;
-    max-width: 412px;
+    /*max-width: 412px;*/
     margin: 0 auto;
     padding-bottom: 100px;
 }
@@ -125,7 +125,7 @@ textarea {
     width: 80px;
     height: 40px;
     border: none;
-    border-radius: 20px;
+    border-radius: 15% / 30%;
     font-size: 16px;
     cursor: pointer;
 }

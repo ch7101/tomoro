@@ -25,9 +25,17 @@ new Chart(ctx, {
         },
 
         scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            },
             y: {
                 min: 0,
-                max: 100
+                max: 90,
+                ticks: {
+                    stepSize: 30
+                }
             }
         }
     }
