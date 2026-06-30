@@ -10,7 +10,7 @@ new Chart(ctx, {
             borderWidth: 3,
             tension: 0.4,
             fill: false,
-            pointRadius: 5,
+            pointRadius: 3,
             pointBackgroundColor: '#5F32E1'
         }]
     },

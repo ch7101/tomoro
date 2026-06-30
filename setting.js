@@ -259,7 +259,7 @@ resetBtn.addEventListener("click", () => {
 });
 
 
-/* 테스트 난이도 토글 */
+/* 테스트 난이도 onoff */
 const diffToggle = document.querySelector(".switch input");
 const diffSlider = document.querySelector(".slider");
 
@@ -282,7 +282,7 @@ renderToggle();
 /* 새로고침 버튼 회전 */
 const refreshBtns = document.querySelectorAll(".refreshbtn");
 
-// 회전 애니메이션을 JS로 주입 (css/html 안 건드림)
+// 회전 애니메이션
 const spinStyle = document.createElement("style");
 spinStyle.textContent =
     "@keyframes spin{ to { transform: rotate(-360deg); } }" +
