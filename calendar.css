@@ -1,188 +1,188 @@
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
 /* 전체 */
-body{
-    background:#fff;
-    font-family:LexendDeca;
+body {
+    background: #fff;
+    font-family: LexendDeca;
 }
 
-.container{
-    width:100%;
-    max-width:412px;
-    margin:0 auto;
+.container {
+    width: 100%;
+    max-width: 412px;
+    margin: 0 auto;
 }
 
 /* 상단 */
-.header{
-    width:90%;
-    height:65px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.header {
+    width: 90%;
+    height: 65px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header h2{
-    font-size:20px;
+.header h2 {
+    font-size: 20px;
 }
 
 .backbtn,
-.alarmbtn{
-    border:none;
-    background:none;
-    cursor:pointer;
+.alarmbtn {
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
-.backbtn img{
-    width:28px;
-    height:28px;
+.backbtn img {
+    width: 28px;
+    height: 28px;
 }
 
-.alarmbtn img{
-    width:26px;
-    height:26px;
+.alarmbtn img {
+    width: 26px;
+    height: 26px;
 }
 
 /* 월 선택 */
-.month_bar{
-    width:90%;
-    margin:8px auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.month_bar {
+    width: 90%;
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.month_bar h3{
-    font-size:18px;
+.month_bar h3 {
+    font-size: 18px;
 }
 
-.month_btn{
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:50%;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-    cursor:pointer;
+.month_btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    cursor: pointer;
 }
 
-.month_btn img{
-    width:14px;
+.month_btn img {
+    width: 14px;
 }
 
 /* 구분선 */
-hr{
-    width:90%;
-    margin:8px auto;
-    border:none;
-    border-top:1px solid #E5E5E5;
+hr {
+    width: 90%;
+    margin: 8px auto;
+    border: none;
+    border-top: 1px solid #E5E5E5;
 }
 
 /* 요일 */
-.week{
-    width:90%;
-    margin:10px auto 4px;
-    display:grid;
-    grid-template-columns:repeat(7, 1fr);
-    text-align:center;
-    color:#999;
-    font-size:14px;
+.week {
+    width: 90%;
+    margin: 10px auto 4px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    color: #999;
+    font-size: 14px;
 }
 
 /* 달력 */
-.calendar{
-    width:90%;
-    margin:0 auto 110px;
-    display:grid;
-    grid-template-columns:repeat(7, 1fr);
-    justify-items:center;
-    row-gap:8px;
+.calendar {
+    width: 90%;
+    margin: 0 auto 110px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    row-gap: 8px;
 }
 
 /* 날짜 칸 */
-.day{
-    width:42px;
-    height:100px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:6px;
-    padding:8px 0;
-    border:2px solid transparent;
-    border-radius:16px;
-    background:none;
-    cursor:pointer;
+.day {
+    width: 42px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background: none;
+    cursor: pointer;
     justify-content: space-between
 }
 
-.date{
-    font-size:16px;
-    font-weight:700;
-    color:#000;
+.date {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
 }
 
 /* 다른 달 날짜 */
-.disable .date{
-    color:#CFCFCF;
+.disable .date {
+    color: #CFCFCF;
 }
 
 /* 작은 표시 */
-.count{
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    background:#EEE9FF;
-    color:#6236FF;
-    font-size:10px;
-    font-weight:700;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.count {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #EEE9FF;
+    color: #6236FF;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 표시 없는 날 */
-.count:empty{
-    background:none;
+.count:empty {
+    background: none;
 }
 
 /* 선택 (클릭) */
 .day:focus,
-.selected{
-    border-color:#6236FF;
-    outline:none;
+.selected {
+    border-color: #6236FF;
+    outline: none;
 }
 
 /* 아래 바 */
-.bar{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:80px;
-    background:#F5F5F5;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
+.bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #F5F5F5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* 버튼 */
-.bar button{
-    width:96px;
-    height:55px;
-    border:none;
-    background:transparent;
-    border-radius:14px;
-    cursor:pointer;
+.bar button {
+    width: 96px;
+    height: 55px;
+    border: none;
+    background: transparent;
+    border-radius: 14px;
+    cursor: pointer;
 }
 
 /* 아이콘 */
-.bar img{
-    width:30px;
-    height:30px;
+.bar img {
+    width: 30px;
+    height: 30px;
 }
 
-#alertbtn{
-    background:#5F32E1;
+#alertbtn {
+    background: #5F32E1;
 }

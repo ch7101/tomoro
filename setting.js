@@ -1,3 +1,24 @@
+document.getElementById("homebtn").addEventListener("click", function () {
+    window.location.href = "main.html";
+});
+
+document.getElementById("alertbtn").addEventListener("click", function () {
+    window.location.href = "alert.html";
+});
+
+document.getElementById("settingbtn").addEventListener("click", function () {
+    window.location.href = "setting.html";
+});
+
+document.querySelector(".backbtn").addEventListener("click", () => {
+    history.back();
+});
+
+document.querySelector(".alarmbtn").addEventListener("click", () => {
+    window.location.href = "alert.html";
+});
+
+// 시간 선택 바
 const timeBtn = document.getElementById("timeBtn");
 const timeDefault = document.getElementById("timeDefault");
 const timePicker = document.getElementById("timePicker");
@@ -210,25 +231,7 @@ confirmBtn.onclick = function () {
 };
 
 
-document.getElementById("homebtn").addEventListener("click", function () {
-    window.location.href = "main.html";
-});
 
-document.getElementById("alertbtn").addEventListener("click", function () {
-    window.location.href = "alert.html";
-});
-
-document.getElementById("settingbtn").addEventListener("click", function () {
-    window.location.href = "setting.html";
-});
-
-document.querySelector(".backbtn").addEventListener("click", () => {
-    history.back();
-});
-
-document.querySelector(".alarmbtn").addEventListener("click", () => {
-    window.location.href = "alert.html";
-});
 
 
 /* 초기화 버튼 */
@@ -277,21 +280,3 @@ function renderToggle() {
 
 diffToggle.addEventListener("change", renderToggle);
 renderToggle();
-
-
-/* 새로고침 버튼 회전 */
-const refreshBtns = document.querySelectorAll(".refreshbtn");
-
-// 회전 애니메이션
-const spinStyle = document.createElement("style");
-spinStyle.textContent =
-    "@keyframes spin{ to { transform: rotate(-360deg); } }" +
-    ".refreshbtn.spin img{ animation: spin .6s linear; }";
-document.head.appendChild(spinStyle);
-
-refreshBtns.forEach((btn) => {
-    // 누르면 한 바퀴 회전
-    btn.addEventListener("click", () => btn.classList.add("spin"));
-    // 끝나면 클래스 제거 → 다시 누를 수 있음
-    btn.addEventListener("animationend", () => btn.classList.remove("spin"));
-});

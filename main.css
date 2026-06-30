@@ -1,19 +1,19 @@
-/* 전체 */    
+/* 전체 */
 body {
     background-image: url("images/background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family:LexendDeca;
+    font-family: LexendDeca;
 }
 
 /* 컨테이너 */
-.container{
-    width:100%;
-    max-width:412px;
-    margin:0 auto;
-    padding-bottom:100px;
+.container {
+    width: 100%;
+    max-width: 412px;
+    margin: 0 auto;
+    padding-bottom: 100px;
 }
 
 .header {
@@ -52,8 +52,8 @@ body {
 }
 
 .quest {
-    width:90%;
-    max-width:350px;
+    width: 90%;
+    max-width: 350px;
     margin: 0 auto;
     height: 150px;
     max-height: 22vh;
