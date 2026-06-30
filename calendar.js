@@ -10,8 +10,8 @@ document.getElementById("settingbtn").addEventListener("click", function () {
     window.location.href = "setting.html";
 });
 
-document.querySelector(".calendarbtn").addEventListener("click", () => {
-    window.location.href = "calendar.html";
+document.querySelector(".alarmbtn").addEventListener("click", () => {
+    window.location.href = "alert.html";
 });
 
 document.querySelector(".backbtn").addEventListener("click", () => {

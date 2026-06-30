@@ -208,3 +208,52 @@ confirmBtn.onclick = function () {
     timePicker.classList.remove("show");
     timeDefault.style.display = "block";
 };
+
+
+document.getElementById("homebtn").addEventListener("click", function () {
+    window.location.href = "main.html";
+});
+
+document.getElementById("alertbtn").addEventListener("click", function () {
+    window.location.href = "alert.html";
+});
+
+document.getElementById("settingbtn").addEventListener("click", function () {
+    window.location.href = "setting.html";
+});
+
+document.querySelector(".backbtn").addEventListener("click", () => {
+    history.back();
+});
+
+document.querySelector(".alarmbtn").addEventListener("click", () => {
+    window.location.href = "alert.html";
+});
+
+
+/* 초기화 버튼 */
+const resetBtn = document.querySelector(".reset_btn");
+
+resetBtn.addEventListener("click", () => {
+    // 기본값
+    currentSel = {
+        hour: 11,      // 12시
+        minute: 0,
+        second: 0,
+        period: 0,     // AM
+        cycle: 0       // 매일
+    };
+
+    // 피커 위치 변경
+    applySelection(currentSel);
+
+    // 화면 텍스트 변경
+    selectedTime.textContent = formatText(currentSel);
+
+    // localStorage도 기본값으로 저장
+    saveSelection(currentSel);
+
+    // 피커 닫기
+    timePicker.classList.remove("show");
+    timeDefault.style.display = "block";
+});

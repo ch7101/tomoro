@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class='container'>
+        <div class='container'>
         <!-- 상단 -->
         <div class="header">
 
@@ -62,7 +62,7 @@
                 </div>
 
                 <button class="refreshbtn">
-                    <img src="images/refresh.png" alt="refresh">
+                    <img src="images/refresh.png" class="refreshicon">
                 </button>
             </div>
         </div>
@@ -70,7 +70,7 @@
         <!-- 테스트 설정 -->
 
         <div class="test">
-            <p class="device_text">테스트 및 기기 설정</p>
+            <p class="device_text">테스트 및 감지 설정</p>
             <div class="setting_card">
                 <div class="setting_item">
                     <h3>인지 테스트 주기</h3>
@@ -108,11 +108,25 @@
                             </button>
                         </div>
                     </div>
+                </div>
 
-                    <div class="guide">
-                        난이도 자동 조절 활성화 시 사용자의 최근 7일간 수행 데이터를<br>
-                        분석하여 최적의 난이도의 테스트 문항을 제공합니다.
+                <!-- 테스트 난이도 -->
+                <div class="setting_item">
+                    <div class="toggle_top">
+                        <div>
+                            <h3>테스트 난이도</h3>
+                            <p>응답 속도에 따른 자동 난이도 조절</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
                     </div>
+                </div>
+
+                <div class="guide">
+                    난이도 자동 조절 활성화 시 사용자의 최근 7일간 수행 데이터를<br>
+                    분석하여 최적의 난이도의 테스트 문항을 제공합니다.
                 </div>
             </div>
 

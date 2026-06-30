@@ -1,12 +1,11 @@
-*{
-    box-sizing:border-box;
-}
-
-/* 화면 전체 */
-
+/* 전체 */    
 body {
-    background-color: #fff;
-    font-family: Lexend Deca;
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family:Lexend Deca;
 }
 
 /* 컨테이너 */
@@ -14,7 +13,6 @@ body {
     width:100%;
     max-width:412px;
     margin:0 auto;
-    min-height:100vh;
 }
 
 .header {
