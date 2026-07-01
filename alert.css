@@ -66,6 +66,7 @@ textarea {
     overflow-x: auto;
     overflow-y: visible;
     padding: 8px 0;
+    justify-content: center;
 }
 
 .date_list::-webkit-scrollbar {
@@ -117,7 +118,8 @@ textarea {
     width: 90%;
     margin: 18px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 14px;
 }
 
 .categorybtn,
