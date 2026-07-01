@@ -145,6 +145,7 @@ textarea {
 /* 카드 */
 .alert_list {
     width: 90%;
+    max-width: 600px;
     margin: auto;
     display: flex;
     flex-direction: column;

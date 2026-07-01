@@ -94,6 +94,7 @@ hr {
     margin: 0 auto 110px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     justify-items: center;
     row-gap: 8px;
 }
@@ -145,14 +146,14 @@ hr {
 }
 
 /* 선택 (클릭) */
-.day:focus,
+.day:not(.disable):focus,
 .selected {
     border-color: #5F33E1;
     outline: none;
 }
 
 /* 선택(클릭) 글자 보라색 */
-.day:focus .date,
+.day:not(.disable):focus .date,
 .selected .date {
     color: #5F33E1;
 }

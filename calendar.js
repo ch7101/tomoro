@@ -18,24 +18,6 @@ document.querySelector(".backbtn").addEventListener("click", () => {
     history.back();
 });
 
-
-// 날짜 선택 → 원래 페이지로 날짜 전달
-document.querySelectorAll(".calendar .day").forEach((dayBtn) => {
-    // 이전/다음 달의 비활성 날짜는 제외
-    if (dayBtn.classList.contains("disable")) return;
-
-    dayBtn.addEventListener("click", () => {
-        const date = dayBtn.querySelector(".date").textContent.trim();
-
-        // 선택한 날짜를 저장
-        sessionStorage.setItem("selectedDate", date);
-
-        // 원래 페이지로 돌아가기
-        history.back();
-    });
-});
-
-
 // 현재 날짜 불러오기
 const month = document.getElementById("month");
 
@@ -50,15 +32,6 @@ function printMonth() {
 
 printMonth();
 
-// 날짜 버튼 생성
-
-
-
-
-
-
-
-
 // 오늘 날짜 표시
 const today = new Date();
 
@@ -66,4 +39,83 @@ const todaycheck = `${today.getFullYear()}-${String(today.getMonth() + 1).padSta
 
 sessionStorage.setItem("alertSelectedDate", todaycheck);
 
+// 날짜 버튼 생성
+const calendar = document.getElementById("calendar");
 
+function createCalendar(year, month) {
+
+    calendar.innerHTML = "";
+
+    var firstDay = new Date(year, month, 1).getDay();
+    var lastDay = new Date(year, month + 1, 0).getDate();
+    var prevLastDate = new Date(year, month, 0).getDate();
+
+    for (let i = 0; i < 42; i++) {
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+
+        const date = document.createElement("span");
+        date.className = "date";
+
+        const count = document.createElement("span");
+        count.className = "count";
+
+        let day;
+
+        if (i < firstDay) {
+            day = prevLastDate - firstDay + i + 1;
+            btn.className = "day disable";
+        }
+
+        //이번달 다음달 구분      
+        else if (i < firstDay + lastDay) {
+            day = i - firstDay + 1;
+            btn.className = "day";
+
+            // 오늘 날짜 선택
+            if (
+                year == today.getFullYear() &&
+                month == today.getMonth() &&
+                day == today.getDate()
+            ) {
+                btn.classList.add("selected");
+            }
+        }
+
+        // 다음 달
+        else {
+            day = i - firstDay - lastDay + 1;
+            btn.className = "day disable";
+        }
+
+        date.textContent = day;
+        btn.appendChild(date);
+        btn.appendChild(count);
+        calendar.appendChild(btn);
+    }
+}
+
+const now = new Date();
+createCalendar(now.getFullYear(), now.getMonth());
+
+// 날짜 선택하면 원래 페이지로 전달
+document.querySelectorAll(".day").forEach((btn) => {
+    btn.addEventListener("click", () => {
+
+        // 비활성 날짜 제외
+        if (btn.classList.contains("disable")) return;
+
+        //원래 선택된 버튼 제거
+        document.querySelector(".selected").classList.remove("selected");
+
+        // 누른 버튼 선택
+        btn.classList.add("selected");
+
+        // 누른 날짜 저장
+        const day = btn.querySelector(".date").textContent;
+        sessionStorage.setItem("selectedDate", day);
+
+        history.back();
+    });
+});
