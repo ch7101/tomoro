@@ -76,6 +76,14 @@ function createCalendar(year, month) {
         if (i < firstDay) {
             day = prevLastDate - firstDay + i + 1;
             btn.className = "day disable";
+            btn.addEventListener("click", () => {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                render();
+            });
         }
 
         //이번달 다음달 구분
@@ -98,6 +106,14 @@ function createCalendar(year, month) {
         else {
             day = i - firstDay - lastDay + 1;
             btn.className = "day disable";
+            btn.addEventListener("click", () => {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                render();
+            });
         }
 
         date.textContent = day;

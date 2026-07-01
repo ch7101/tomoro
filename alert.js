@@ -11,7 +11,7 @@ document.getElementById("settingbtn").addEventListener("click", function () {
 });
 
 document.querySelector(".calendarbtn").addEventListener("click", () => {
-    // 현재 선택된 날짜를 캘린더에 기본 선택으로 넘긴다
+    // 현재 선택된 날짜를 캘린더에 기본 선택으로
     const activeCard = document.querySelector(".date_card.active");
     if (activeCard) {
         sessionStorage.setItem("SelectedDate", activeCard.dataset.date);
@@ -52,7 +52,6 @@ categoryBtns.forEach((btn) => {
 const dateList = document.getElementById("dateList");
 const week = ["일", "월", "화", "수", "목", "금", "토"];
 
-// Date -> "YYYY-MM-DD"
 function formatDate(date) {
     const y = date.getFullYear();
     const m = String(date.getMonth() + 1).padStart(2, "0");
@@ -116,9 +115,8 @@ function createDateList(centerDate = getCenterDate()) {
         .scrollIntoView({ inline: "center", block: "nearest" });
 }
 
-// 최초 로드: 캘린더에서 넘어온 날짜(있으면) 기준, 없으면 오늘
+// 캘린더에서 넘어온 날짜
 createDateList();
-// 한 번 쓰고 소비 → 다른 페이지 갔다 오면 오늘 날짜로 정렬
 sessionStorage.removeItem("SelectedDate");
 
 // 뒤로가기(bfcache) 복원 시엔 오늘 날짜로 초기화
