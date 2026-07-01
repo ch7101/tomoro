@@ -18,30 +18,39 @@ document.querySelector(".backbtn").addEventListener("click", () => {
     history.back();
 });
 
-// 현재 날짜 불러오기
-const month = document.getElementById("month");
-
-function printMonth() {
-    var currentDate = new Date();
-
-    var year = currentDate.getFullYear();
-    var MonthNum = currentDate.getMonth() + 1;
-
-    month.textContent = `${MonthNum}월 ${year}`;
-}
-
-printMonth();
-
-// 오늘 날짜 표시
+// 오늘 날짜
 const today = new Date();
 
-const todaycheck = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+// alert에서 넘어온 선택 날짜
+let selYear, selMonth, selDay;
+const saved = sessionStorage.getItem("SelectedDate");
+if (saved) {
+    const [y, m, d] = saved.split("-").map(Number);
+    if (y && m && d) {
+        selYear = y;
+        selMonth = m - 1;
+        selDay = d;
+    }
+}
+if (selYear === undefined) {
+    selYear = today.getFullYear();
+    selMonth = today.getMonth();
+    selDay = today.getDate();
+}
 
-sessionStorage.setItem("alertSelectedDate", todaycheck);
+// 선택 날짜의 달 표시
+let currentYear = selYear;
+let currentMonth = selMonth;
 
-// 날짜 버튼 생성
+// 상단 월 표시
+const month = document.getElementById("month");
 const calendar = document.getElementById("calendar");
 
+function printMonth() {
+    month.textContent = `${currentMonth + 1}월 ${currentYear}`;
+}
+
+// 날짜 버튼 생성
 function createCalendar(year, month) {
 
     calendar.innerHTML = "";
@@ -62,22 +71,24 @@ function createCalendar(year, month) {
         count.className = "count";
 
         let day;
+        let isCurrentMonth = false;
 
         if (i < firstDay) {
             day = prevLastDate - firstDay + i + 1;
             btn.className = "day disable";
         }
 
-        //이번달 다음달 구분      
+        //이번달 다음달 구분
         else if (i < firstDay + lastDay) {
             day = i - firstDay + 1;
             btn.className = "day";
+            isCurrentMonth = true;
 
-            // 오늘 날짜 선택
+            // 기본 선택 날짜 하이라이트
             if (
-                year == today.getFullYear() &&
-                month == today.getMonth() &&
-                day == today.getDate()
+                year == selYear &&
+                month == selMonth &&
+                day == selDay
             ) {
                 btn.classList.add("selected");
             }
@@ -92,30 +103,51 @@ function createCalendar(year, month) {
         date.textContent = day;
         btn.appendChild(date);
         btn.appendChild(count);
+
+        // 이번 달 날짜만 선택 가능
+        if (isCurrentMonth) {
+            btn.addEventListener("click", () => {
+                // 원래 선택된 버튼 제거
+                const prev = calendar.querySelector(".selected");
+                if (prev) prev.classList.remove("selected");
+
+                // 누른 버튼 선택
+                btn.classList.add("selected");
+
+                // 알림 페이지로 이동
+                const selectedDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                sessionStorage.setItem("SelectedDate", selectedDate);
+                location.href = "alert.html";
+            });
+        }
+
         calendar.appendChild(btn);
     }
 }
 
-const now = new Date();
-createCalendar(now.getFullYear(), now.getMonth());
+function render() {
+    printMonth();
+    createCalendar(currentYear, currentMonth);
+}
 
-// 날짜 선택하면 원래 페이지로 전달
-document.querySelectorAll(".day").forEach((btn) => {
-    btn.addEventListener("click", () => {
-
-        // 비활성 날짜 제외
-        if (btn.classList.contains("disable")) return;
-
-        //원래 선택된 버튼 제거
-        document.querySelector(".selected").classList.remove("selected");
-
-        // 누른 버튼 선택
-        btn.classList.add("selected");
-
-        // 누른 날짜 저장
-        const day = btn.querySelector(".date").textContent;
-        sessionStorage.setItem("selectedDate", day);
-
-        history.back();
-    });
+// 이전 달
+document.getElementById("prevBtn").addEventListener("click", () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    render();
 });
+
+// 다음 달
+document.getElementById("nextBtn").addEventListener("click", () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    render();
+});
+
+render();
